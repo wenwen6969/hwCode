@@ -16,6 +16,8 @@
 		"vue": "^3.2.47"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^17.6.5",
+		"@commitlint/config-conventional": "^17.6.5",
 		"@types/node": "^20.2.5",
 		"@typescript-eslint/eslint-plugin": "^5.59.8",
 		"@vitejs/plugin-vue": "^4.1.0",
@@ -35,11 +37,11 @@
 		"vite-plugin-eslint": "^1.8.1",
 		"vue-tsc": "^1.4.2"
 	},
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
 	"lint-staged": {
 		"*.{ts,tsx,vue,js,jsx}": "eslint --cache --fix"
 	}
