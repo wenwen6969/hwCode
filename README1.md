@@ -8,3 +8,12 @@ prettier命令才会使代码格式化。为避免遇到这个问题：1 新建e
 
 二 初始化项目生成的tsconfig.node.json文件是针对vite.config.ts文件配置的。如果moduleResolution属性不设为node,
 就会导致vite.config.ts中有些插件的引用找不到。
+
+### element-plus的坑
+* 1 element-plus全局样式改变，由低版本的import 'element-plus/lib/theme-chalk/index.css'变为import 'element-plus/dist/index.css';
+* 2 2.0+版本的input框会莫名出现类名为el-input__wrapper的dom，导致默认border会被挤进去一些
+>解决方法1 组件或页面中使用:deep('.el-input__wrapper')处理
+>解决方法2 main文件中引入覆盖样式，直接修改element-plus的类名样式
+
+### ts开发three遇到的坑
+* 1 引入gui的时候要three的npm包里看有没有export出来gui的方法文件大概路径为three/examples/jsm/libs，版本不一样文件名不一样的，引入方法时一定要注意

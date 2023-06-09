@@ -3,6 +3,12 @@ import vue from '@vitejs/plugin-vue';
 import eslintPlugin from 'vite-plugin-eslint';
 import glsl from 'rollup-plugin-glsl';
 import path from 'path';
+import px2rem from 'postcss-px2rem';
+// 配置基本大小
+const postcss = px2rem({
+	// 基准大小 baseSize，需要和rem.js中相同
+	remUnit: 14,
+});
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,6 +25,11 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
+		},
+	},
+	css: {
+		postcss: {
+			plugins: [postcss],
 		},
 	},
 });

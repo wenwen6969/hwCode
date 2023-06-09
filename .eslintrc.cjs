@@ -50,5 +50,6 @@ module.exports = {
 				ignores: ['index'], //需要忽略的组件名
 			},
 		],
+		'@typescript-eslint/no-var-requires': 0,
 	},
 };
