@@ -46,6 +46,7 @@ import _ from 'lodash';
 import { ElMessage } from 'element-plus';
 import { initRenderer, initCamera, initScene, initLight } from '@/utils/threeLib';
 import { initSphere, initStar, starMove, initTubeRoute, initCloudMove } from '@/utils/GeometryLib';
+import { testApi } from '@/api/test';
 
 export default defineComponent({
 	setup() {
@@ -156,6 +157,12 @@ export default defineComponent({
 			initOrbitControls();
 			animate();
 			initGUI();
+			const data = {
+				name: '123',
+			};
+			testApi(data).then((res) => {
+				console.log(res);
+			});
 			// const axesHelper = new THREE.AxesHelper(2000)
 			// scene.add(axesHelper)
 		});
