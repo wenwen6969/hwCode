@@ -17,3 +17,7 @@ prettier命令才会使代码格式化。为避免遇到这个问题：1 新建e
 
 ### ts开发three遇到的坑
 * 1 引入gui的时候要three的npm包里看有没有export出来gui的方法文件大概路径为three/examples/jsm/libs，版本不一样文件名不一样的，引入方法时一定要注意
+
+### vue3.0引入antd跟element plus组件库智能提示的问题
+* 1 vue3.0在引入element plus 跟 antd等组件库的时候，如果需要出现标签属性提示，需要两个条件，安装volar插件与在tsconfig的complierOption中的types属性加上
+    GlobalComponents的.d.ts文件的引入路径，例如 "types": ["element-plus/global", "ant-design-vue/typings/global"]!!!!

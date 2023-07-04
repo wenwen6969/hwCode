@@ -32,6 +32,7 @@
         "src/*"
       ]
     },
+    "types": ["element-plus/global", "ant-design-vue/typings/global"]
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.glsl"],
   "exclude": [
