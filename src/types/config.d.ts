@@ -21,3 +21,5 @@ export interface GlobConfig {
 	// Project abbreviation
 	shortName: string;
 }
+
+export type LocaleType = 'zh_CN' | 'en' | 'ru' | 'ja' | 'ko';
